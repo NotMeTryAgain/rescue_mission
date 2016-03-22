@@ -4,9 +4,9 @@
 #
 # Acceptance Criteria
 #
-# [] I must be able to get to this page from the questions index
-# [] I must see the question's title
-# [] I must see the question's description
+# [x] I must be able to get to this page from the questions index
+# [x] I must see the question's title
+# [x] I must see the question's description
 
 feature "user views question details" do
   let(:question) do
@@ -19,8 +19,7 @@ feature "user views question details" do
   scenario "see's details" do
     question
     visit questions_path
-    click_on "What am I?"
-
+    click_link "What am I?"
     expect(page).to have_content("What am I?")
     expect(page).to have_content("What am I? Am I a person?")
   end
