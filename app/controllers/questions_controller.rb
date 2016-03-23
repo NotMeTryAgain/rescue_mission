@@ -15,8 +15,10 @@ class QuestionsController < ApplicationController
     @question = Question.new(question_params)
 
     if @question.save
+      flash[:notice] = "You have successfully posted a question!"
       redirect_to @question
     else
+      flash[:notice] = "#{@question.errors.full_messages.first}"
       render 'new'
     end
   end
