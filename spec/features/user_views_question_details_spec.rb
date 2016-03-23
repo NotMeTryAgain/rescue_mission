@@ -11,16 +11,16 @@
 feature "user views question details" do
   let(:question) do
     Question.create(
-    title: "What am I?",
-    description: "What am I? Am I a person?"
+    title: "What am I? What have I done? Where am I? Who will answer me?",
+    description: "What am I? Am I a person? Am I a mere robot with human-esque strength? Is it worth pondering these things? Am I attempting to meet some kind of arbitrary restraint on something"
     )
   end
 
   scenario "see's details" do
     question
     visit questions_path
-    click_link "What am I?"
-    expect(page).to have_content("What am I?")
-    expect(page).to have_content("What am I? Am I a person?")
+    click_link "What am I? What have I done? Where am I? Who will answer me?"
+    expect(page).to have_content("What am I? What have I done? Where am I? Who will answer me?")
+    expect(page).to have_content("What am I? Am I a person? Am I a mere robot with human-esque strength? Is it worth pondering these things? Am I attempting to meet some kind of arbitrary restraint on something")
   end
 end
