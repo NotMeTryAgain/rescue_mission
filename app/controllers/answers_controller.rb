@@ -1,7 +1,9 @@
 class AnswersController < ApplicationController
   def create
     @question = Question.find(params[:question_id])
-    @answer = @question.answers.create(answer_params)
+    # @answer = @question.answers.create(answer_params)
+    @answer = Answer.new(answer_params)
+    @answer.question = @question
 
     if @answer.save
       flash[:notice] = "You have successfully posted an answer"

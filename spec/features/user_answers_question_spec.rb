@@ -4,9 +4,9 @@
 #
 # Acceptance Criteria
 #
-# [] I must be on the question detail page
-# [] I must provide a description that is at least 50 characters long
-# [] I must be presented with errors if I fill out the form incorrectly
+# [x] I must be on the question detail page
+# [x] I must provide a description that is at least 50 characters long
+# [x] I must be presented with errors if I fill out the form incorrectly
 
 feature "user answers a question" do
   let(:question) do
