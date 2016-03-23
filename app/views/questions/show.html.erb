@@ -5,3 +5,22 @@
 <p>
   <%= @question.description %>
 </p>
+
+<h2>Answers</h2>
+<% @question.answers.each do |answer| %>
+  <p>
+    <strong>Answer:</strong>
+    <%= answer.description %>
+  </p>
+<% end %>
+
+<h2>Add an answer:</h2>
+<%= form_for([@question, @question.answers.build]) do |f| %>
+  <p>
+    <%= f.label :description, "Answer" %><br>
+    <%= f.text_area :description %>
+  </p>
+  <p>
+    <%= f.submit "Add Answer" %>
+  </p>
+<% end %>

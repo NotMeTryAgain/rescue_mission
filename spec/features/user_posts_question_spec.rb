@@ -27,9 +27,6 @@ feature "user posts a question" do
     fill_in "Title", with: "Take it, make it"
     fill_in "Description", with: "No I dont think its going to be ok. There is just not enough characters in the title. That is for sure. For sure? For sure. I am sure. Ok is this long enough yet? Yes."
     click_button "Ask Question"
-    expect(page).to have_content("1 error prevented this question from being asked")
     expect(page).to have_content("Title is too short (minimum is 40 characters)")
-
-    save_and_open_page
   end
 end
