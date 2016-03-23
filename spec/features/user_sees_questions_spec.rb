@@ -29,7 +29,6 @@ feature "user views a list of questions" do
 
     expect(page).to have_content("What am I? What have I done? Where am I? Who will answer my questions?")
     expect(page).to have_content("Whats the jambaroo Mr.Samboro, a koro you say? Cannot be. Yes?")
-    save_and_open_page
     expect("Whats the jambaroo Mr.Samboro, a koro you say? Cannot be. Yes?").to appear_before("What am I? What have I done? Where am I? Who will answer my questions?")
   end
 end
